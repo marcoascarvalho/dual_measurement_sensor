@@ -1,6 +1,6 @@
 # Dual Measurement Sensor
 
-`dual_measurement_sensor` is a custom Home Assistant integration created for the Book 2 project. It listens to a single MQTT base topic containing a JSON payload from a device that reports both **temperature** and **presence**.
+`dual_measurement_sensor` is a custom Home Assistant integration created for the Book Advanced Smart Home Automation Solutions with Home Assistant. It listens to a single MQTT base topic containing a JSON payload from a device that reports both **temperature** and **presence**.
 
 The integration filters noisy temperature readings, stabilizes presence detection, and exposes the device as two Home Assistant entities:
 
@@ -23,21 +23,23 @@ This approach allows one physical MQTT device to appear in Home Assistant as a c
 
 ## Example MQTT Payload
 
-The device should publish a JSON payload to the configured base topic.
+The device should publish a JSON payload to the configured base topic for each sensor, presence and temperature.
 
-Example topic:
+Example topic for temperature:
 
 ```text
-home/book2/dev1
+tele/Garage_Temp_PIR/SENSOR
 ```
-
 Example payload:
 
 ```json
-{
-  "temperature": 23.6,
-  "presence": true
-}
+{"Time":"2026-06-21T01:42:25","Switch1":"OFF","BMP280":{"Temperature":40.9,"Pressure":917.7},"PressureUnit":"hPa","TempUnit":"C"}
+```
+
+Example topic for presence:
+
+```text
+sensor/Garage_Temp_PIR/PR1
 ```
 
 Depending on your device firmware, the JSON keys can be changed during setup. For example, you may use `temp` instead of `temperature`, or `motion` instead of `presence`.
@@ -252,4 +254,4 @@ Key files include:
 
 ## License
 
-This project is provided as an educational example. Add the appropriate license file before sharing or publishing the repository.
+This project is provided as an educational example. 
