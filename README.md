@@ -1,6 +1,6 @@
 # Dual Measurement Sensor
 
-`dual_measurement_sensor` is a custom Home Assistant integration created for the Book Advanced Smart Home Automation Solutions with Home Assistant. It listens to a single MQTT base topic containing a JSON payload from a device that reports both **temperature** and **presence**.
+`dual_measurement_sensor` is a custom Home Assistant integration created for the Book [Advanced Smart Home Automation Solutions with Home Assistant](https://www.packtpub.com/en-us/product/advanced-smart-home-automation-solutions-with-home-assistant-9781806384686). It listens to a single MQTT base topic containing a JSON payload from a device that reports both **temperature** and **presence**.
 
 The integration filters noisy temperature readings, stabilizes presence detection, and exposes the device as two Home Assistant entities:
 
